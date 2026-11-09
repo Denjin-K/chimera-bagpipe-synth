@@ -1,0 +1,10 @@
+[package]
+name = "chimera-pipes"
+description = "CHIMERA PIPES: a physically modelled Great Highland bagpipe band (beating reeds, waveguide bores, the bag), C ABI for an AudioWorklet"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
