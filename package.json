@@ -5,13 +5,15 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "bun run wasm && vite --host 127.0.0.1",
-    "build": "bun run wasm && tsc --noEmit && vite build",
+    "dev": "bun run wasm && bun run wasm:pipes && vite --host 127.0.0.1",
+    "build": "bun run wasm && bun run wasm:pipes && tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "bun run wasm && cargo test --workspace && bun test tests",
     "typecheck": "tsc --noEmit",
     "lint:layout": "bun run wasm && bun tools/layout-lint.ts",
-    "wasm": "cargo build -p chimera-wasm --release --target wasm32-unknown-unknown && cp target/wasm32-unknown-unknown/release/chimera_wasm.wasm src/wasm/chimera.wasm"
+    "wasm": "cargo build -p chimera-wasm --release --target wasm32-unknown-unknown && cp target/wasm32-unknown-unknown/release/chimera_wasm.wasm src/wasm/chimera.wasm",
+    "wasm:pipes": "cargo build -p chimera-pipes --release --target wasm32-unknown-unknown && cp target/wasm32-unknown-unknown/release/chimera_pipes.wasm src/pipes/chimera_pipes.wasm",
+    "pipes": "bun run wasm:pipes && vite --host 127.0.0.1 --open /pipes.html"
   },
   "dependencies": {
     "react": "19.3.1",

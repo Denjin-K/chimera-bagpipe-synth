@@ -19,6 +19,31 @@ for tests and the `chimera` CLI.
 Male, female and child bodies blend continuously. Everything on screen animates from live
 engine state: pressure in the airway, airflow, the vocal folds, spectra and formants.
 
+## PIPES: a Highland pipe band
+
+`pipes.html` is a second instrument in the same vector-display style: a physically modelled
+Great Highland bagpipe, and a band of up to five of them. Each pipe is a bag (struck in, held,
+let go), a conical chanter with a beating double reed, and two tenor drones and a bass drone with
+beating single reeds; the reeds' flow is solved against the bag and the waveguide bores every
+sample (`crates/chimera-pipes`). The chanter plays the just-intonation pipe scale (Low G 7/8 …
+High A 2) over drones on A; each set of pipes is a few cents off the next, as in a real band.
+
+- **Tunes** are ABC (pipe notation `K:HP`, gracenotes in `{}`); tunes in other keys move onto the
+  chanter. Built in: *Scotland the Brave* (the pipe setting, with its doublings, grips and throws),
+  *Amazing Grace* and *Auld Lang Syne*. Paste your own under *Your tune…*; `V:1` … `V:5` give each piper a part,
+  otherwise the band shares one part out as melody and seconds.
+- **See** the air: particles come in at the blowpipe with each breath, drift through the bag and
+  leave up the drones and out of the chanter, as fast as the engine's flow through each reed;
+  the bores light with the pressure in their waveguides. **3D** shows the band standing in a
+  pipe band's circle: drag to turn, scroll to zoom, click a piper to watch it.
+- **Play** the chanter on A S D F G H J K L (Low G … High A); Space strikes in or cuts off; Enter
+  plays the tune. **Stage** hides the controls for a clean screen recording (Esc leaves it).
+
+```sh
+bun install
+bun run pipes      # builds the pipes wasm, then opens http://127.0.0.1:5317/pipes.html
+```
+
 ## Run it
 
 Needs Rust with the `wasm32-unknown-unknown` target, and Bun.
