@@ -1248,6 +1248,34 @@ body {
   text-shadow: var(--glow-blue);
 }
 
+/* the instruments: PIPES (its own page) before the voice's modes */
+.mode-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.pipes-nav-link {
+  flex: none;
+  border: 1px solid rgba(255, 179, 64, 0.45);
+  padding: 4px 11px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--amber);
+  text-shadow: 0 0 1.5px rgba(255, 179, 64, 0.7);
+}
+
+.pipes-nav-link:hover,
+.pipes-nav-link:focus-visible {
+  border-color: var(--amber);
+  color: #fff3dc;
+  box-shadow: 0 0 5px rgba(255, 179, 64, 0.35), inset 0 0 4px rgba(255, 179, 64, 0.15);
+  text-shadow: 0 0 1.5px rgba(255, 179, 64, 0.9), 0 0 6px rgba(255, 179, 64, 0.4);
+}
+
 /* the body: preset chips and the triangle between them */
 .body-control {
   display: flex;

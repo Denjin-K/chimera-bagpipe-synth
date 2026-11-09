@@ -54,18 +54,24 @@ function TopBar() {
         <span className="wordmark">Chimera</span>
         <span className="tagline">A voice grown from a simulated airway</span>
       </div>
-      <Segmented<Mode>
-        label="Mode"
-        value={mode}
-        onChange={setMode}
-        options={[
-          { value: "play", label: "Play" },
-          { value: "speak", label: "Speak" },
-          { value: "sing", label: "Sing" },
-          { value: "bestiary", label: "Bestiary" },
-          { value: "beatbox", label: "Beatbox" },
-        ]}
-      />
+      <nav className="mode-nav" aria-label="Instruments">
+        {/* the pipe band is its own page (pipes.html): a link, not one of the voice's modes */}
+        <a className="pipes-nav-link" href="/pipes.html" title="CHIMERA PIPES: a physically modelled Highland pipe band">
+          Pipes
+        </a>
+        <Segmented<Mode>
+          label="Mode"
+          value={mode}
+          onChange={setMode}
+          options={[
+            { value: "play", label: "Play" },
+            { value: "speak", label: "Speak" },
+            { value: "sing", label: "Sing" },
+            { value: "bestiary", label: "Bestiary" },
+            { value: "beatbox", label: "Beatbox" },
+          ]}
+        />
+      </nav>
       {mode !== "bestiary" && (
         <div className="body-control">
           <Segmented<BodyName>
